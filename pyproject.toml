@@ -1,0 +1,41 @@
+[project]
+name = "traktor-tsi-re"
+version = "0.1.0"
+description = "Reverse-engineer and parse Traktor Pro TSI controller mappings (TP2/TP3/TP4) in Python."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Your Name", email = "you@example.com" }]
+keywords = ["traktor", "tsi", "midi", "dj", "reverse-engineering"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Topic :: Multimedia :: Sound/Audio",
+]
+
+[project.urls]
+Homepage = "https://github.com/<you>/traktor-tsi-re"
+Issues = "https://github.com/<you>/traktor-tsi-re/issues"
+
+[project.scripts]
+tsi-tool = "traktor_tsi.cli:app_main"
+
+[tool.black]
+line-length = 100
+target-version = ["py39"]
+
+[tool.isort]
+profile = "black"
+
+[tool.flake8]
+max-line-length = 100
+extend-ignore = ["E203","W503"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta"
